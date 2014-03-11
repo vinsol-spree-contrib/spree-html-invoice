@@ -6,8 +6,8 @@
     	<!--<div class="shop"><%= Spree::Config[:site_name] %></div>-->    
       Fredrikinkatu 19 (Viiskulma) <br>
       00120 Helsinki<br><br>
-      <%=I18n.l(@order.completed_at.to_date) if @order.completed_at %>&nbsp;/&nbsp;
-      <%= Spree.t(:order_number) %> <%=@order.number%></font>
+      <%= Spree.l(@order.completed_at.to_date) if @order.completed_at %>&nbsp;/&nbsp;
+      <%= Spree.t(:order_number) %> <%= @order.number%></font>
     </td>
   </tr>
 </table>
