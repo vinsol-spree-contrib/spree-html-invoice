@@ -1,19 +1,24 @@
-<table class="totals">
-
-  <tr>
-    <td class="cel1 bold"><strong><%= t(:order_total) %>:</strong></td>
-    <td class="cel2 cell" align="right"><strong><span id='summary-order-total'><%= @order.display_total.to_html %></span></strong></td>
+<table width="700" cellspacing="0" cellpadding="7" border="0" class="line_items" style="border:solid 1px #cccccc; border-bottom:none; margin:30px 0;" >
+  <% @order.adjustments.eligible.each do |adjustment| %>
+  <tr class="total">
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.label %>:</font></td>
+    <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.display_amount.to_html %></font></td>
   </tr>
-  <% if @order.line_item_adjustment_totals.present? %>
-    <tr>
-      <td class="cel1"></td>
-      <td class="cel2"></td>
-    </tr>
-    <% @order.line_item_adjustment_totals.each do |key, total| %>
-      <tr class="total">
-        <td class="cel1 bold"><%= key %>:</td>
-        <td class="cel2 cell" align="right"><%= total %></td>
-      </tr>
-    <% end %>
+  <% end %>
+  <tr>
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><strong><%= t(:order_total) %>:</strong></font></td>
+    <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><strong><span id='summary-order-total'><%= number_to_currency @order.total %></span></strong></font></td>
+  </tr>
+  <% if @order.adjustments.eligible.present? %>
+  <tr>
+    <td class="cel1" style="border-bottom:solid 1px #cccccc;" style="border-bottom:solid 1px #cccccc;"></td>
+    <td class="cel2" style="border-bottom:solid 1px #cccccc;"></td>
+  </tr>
+  <% @order.adjustments.each do |adjustment| %>
+  <tr class="total">
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.label %>:</font></td>
+    <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.display_amount.to_html %></font></td>
+  </tr>
+  <% end %>
   <% end %>
 </table>
