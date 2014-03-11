@@ -1,7 +1,7 @@
 <table class="totals">
   <tr>
     <td class="cel1 bold"><%= t(:item_total) %>: </td>
-    <td class="cel2 bold cell" align="right"><%= order.display_item_total.to_html %></td>
+    <td class="cel2 bold cell" align="right"><%= @order.display_item_total.to_html %></td>
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
     <tr>
