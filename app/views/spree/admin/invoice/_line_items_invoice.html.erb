@@ -7,11 +7,11 @@
     <col class="total"/>
   </colgroup>
   <tr>
-    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="sku bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= t(:sku) %></font></th>
-    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="desc bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= t(:item_description) %></font></th>
-    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="price bold"><font face="Arial, Helvetica, sans-serif" size="2"><%=t(:price) unless @receipt%></font></th>
-    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="qty bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= t(:qty) %> </font></th>
-    <th align="right" bgcolor="#cccccc" style="background:#cccccc;" class="total bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= t(:total) %></font></th>
+    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="sku bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:sku) %></font></th>
+    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="desc bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:item_description) %></font></th>
+    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="price bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:price) unless @receipt%></font></th>
+    <th align="left" bgcolor="#cccccc" style="background:#cccccc;" class="qty bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:qty) %> </font></th>
+    <th align="right" bgcolor="#cccccc" style="background:#cccccc;" class="total bold"><font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:total) %></font></th>
   </tr>
   <% @order.line_items.each do |item| %>
     <tr >
@@ -24,7 +24,7 @@
     <% if item.respond_to? :discount and item.discount > 0 %>
        <tr style="border-bottom:solid 1px #cccccc;">
         <td class="cell" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
-        <td class="cell" style="border-bottom:solid 1px #cccccc;">(<font face="Arial, Helvetica, sans-serif" size="2"><%= t(:discount) %>)</font></td>
+        <td class="cell" style="border-bottom:solid 1px #cccccc;">(<font face="Arial, Helvetica, sans-serif" size="2"><%= Spree.t(:discount) %>)</font></td>
         <td class="cell price" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%=number_to_currency(-1 * item.discount) %></font></td>
         <td class="cell qty" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
         <td class="cell total" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%=number_to_currency(-1 * item.discount * item.quantity) %></font></td>

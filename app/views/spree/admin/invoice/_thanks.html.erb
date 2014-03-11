@@ -24,7 +24,7 @@ viite = open("http://www1.nordea.fi/P636V/H636VTXT.asp?action=tekstiLista&lkm=1&
     <td class="cell">&nbsp;</td>
   </tr>
   <tr>
-    <td class="thanks cell" cellspan="2"><%== t("#{params[:template]}.thanks" , :order => @order)%> </td>
+    <td class="thanks cell" cellspan="2"><%== Spree.t("#{params[:template]}.thanks" , :order => @order)%> </td>
     <td class="cell">&nbsp;</td>
   </tr>
 </table>

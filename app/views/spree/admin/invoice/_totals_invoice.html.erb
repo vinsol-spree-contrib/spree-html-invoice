@@ -1,6 +1,6 @@
 <table class="totals">
   <tr>
-    <td class="cel1 bold"><%= t(:item_total) %>: </td>
+    <td class="cel1 bold"><%= Spree.t(:item_total) %>: </td>
     <td class="cel2 bold cell" align="right"><%= @order.display_item_total.to_html %></td>
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
@@ -11,7 +11,7 @@
   <% end %>
 
   <tr>
-    <td class="cel1 bold"><strong><%= t(:order_total) %>:</strong></td>
+    <td class="cel1 bold"><strong><%= Spree.t(:order_total) %>:</strong></td>
     <td class="cel2 cell" align="right"><strong><span id='summary-order-total'><%= order.display_total.to_html %></span></strong></td>
   </tr>
 </table>
