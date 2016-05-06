@@ -9,26 +9,26 @@
 <body>
   <div class="a4">
     <div id="header">
-      <%= render :partial => "header" %>
+      <%= render "header" %>
     </div>
     <div class="address">
-      <%= render :partial => "address" %>
+      <%= render "address" %>
     </div>
     <div class="wrapper">
       <div class="line_items">
-        <%= render :partial => "line_items_#{params[:template]}" %>
+        <%= render "line_items_#{params[:template]}" %>
       </div>
       <div class="thanks">
-        <%= render :partial => "thanks" %>
+        <%= render "thanks" %>
       </div>
       <div class="spacer"> &nbsp;
       </div>
       <div class="totals">
-        <%= render :partial => "totals_#{params[:template]}" %>
+        <%= render "totals_#{params[:template]}" %>
       </div>
     </div>
     <div class="footer">
-      <%= render :partial => "footer" %>
+      <%= render "footer" %>
     </div>
   </div>
 </body>

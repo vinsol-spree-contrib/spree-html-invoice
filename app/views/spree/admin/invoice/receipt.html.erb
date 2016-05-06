@@ -8,16 +8,16 @@
 <body onLoad="self.print()"> 
   <div class="receipt">
     <div id="header">
-      <%= render :partial => "spree/admin/invoice/receipt_header" %>
+      <%= render "spree/admin/invoice/receipt_header" %>
     </div>
-    
+
     <div class="wrapper">
       <div class="line_items">
-        <%= render :partial => "spree/admin/invoice/line_items_invoice" %>
+        <%= render "spree/admin/invoice/line_items_invoice" %>
       </div>
       <!--<div class="spacer"> &nbsp;</div>-->
       <div class="totals">
-        <%= render :partial => "spree/admin/invoice/totals_receipt" %>
+        <%= render "spree/admin/invoice/totals_receipt" %>
       </div>
     </div>
   </div>
