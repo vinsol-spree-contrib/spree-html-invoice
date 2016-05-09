@@ -4,7 +4,7 @@
     <td width="345">
     <div align="right">
       <p class="title"><%= Spree.t("#{params[:template]}.header") %></p>
-      <p class="bold"><%= Spree.t(:order_number).to_s + " " + @order.number  %></p>
+      <p class="bold"><%= Spree.t(:order_number, number: @order.number)  %></p>
       <p class="bold"> <%= Spree.l(@order.completed_at.to_date) if @order.completed_at %></p>
     </div></td>
   </tr>
