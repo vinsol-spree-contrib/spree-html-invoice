@@ -1,28 +1,20 @@
-Update
-========
 
-Notice of demolition: this rep WILL be removed. Go fork, even register your fork on spreecommerce, but don't sent pushes.
-
-SUMMARY
+Spree-Html-Invoice
 =======
 
 This extension provides a "Print Invoice" button on the Admin Orders view screen which opens a printable html page with the order details.
 
-You have to set up your computer for printing, or PDF generation. Off course, if you cave a mac that is as easy as pressing the print + save as pdf buttons.
-
-If you need server-side pdf generation, use the spree-print-invoice extension.
  
 INSTALLATION
 ============
 
-For spree 1.0, There is a tag for 0.7.
+Compatible with spree 2.1 and 2.2 versions.
 
-As I don't release gems, for better version control you may wish to clone the repository. 
 If you have improvements, please send pull though.
 
 1. To install you need to add the following lines to your Gemfile (no external dependencies)
 
-    gem 'spree_html_invoice' , :git => 'git://github.com/dancinglightning/spree-html-invoice.git'
+    gem 'spree_html_invoice' , :git => 'git://github.com/vinsol/spree-html-invoice.git'
 
 2. run bundler
 
@@ -52,14 +44,4 @@ Configuration
 
   Use above feature for your own template if you want. For each button_name, define a subsection with header,   print, and thanks, in your locale.
 
-
-Extra
-=====
-
-There is now a receipt template, for a normal receipt printer (ie 70mm). This works for us, but what about you?
-
-Barcodes have gone to their own package spree-product-barcodes
-
 Contributions welcome
-
-Torsten
