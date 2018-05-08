@@ -9,7 +9,7 @@ require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
-require 'factory_girl'
+require 'factory_bot'
 require 'rails-controller-testing'
 # Requires factories and other useful helpers defined in spree_core.
 require 'spree/testing_support/authorization_helpers'
@@ -21,7 +21,7 @@ require 'spree/testing_support/url_helpers'
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
