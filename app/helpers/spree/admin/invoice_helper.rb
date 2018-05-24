@@ -21,13 +21,13 @@ module Spree
       end
 
       def show_label(adjustment)
-       label =  adjustment.label
-       if adjustment.adjustable.is_a?(Spree::Shipment)
-         label += Spree.t(:ship_adjustment)
-       elsif adjustment.adjustable.is_a?(Spree::LineItem)
-         label += "(" + adjustment.adjustable.product.name + ")"
+        label =  adjustment.label
+        if adjustment.adjustable.is_a?(Spree::Shipment)
+          label += "(" + Spree.t(:ship_adjustment, location: adjustment.adjustable.stock_location.name) + ")"
+        elsif adjustment.adjustable.is_a?(Spree::LineItem)
+          label += "(" + adjustment.adjustable.product.name + ")"
         end
-        label + ":"
+        label
       end
     end
   end

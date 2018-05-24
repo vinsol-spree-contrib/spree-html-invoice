@@ -8,8 +8,11 @@ en:
     size: "Size"
     price: "Price"
     order_date: "Order date"
-    ship_adjustment: "(Shipping Adjustments)"
+    ship_adjustment: "on Shipping Adjustments from %{location}"
     shipment_amount: "Shipping Amount"
+    state: "State"
+    method: "Method"
+    amount: "Amount"
     invoice:
       header: Customer Invoice
       thanks: Thank you for your order.

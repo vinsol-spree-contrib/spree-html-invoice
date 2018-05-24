@@ -5,7 +5,7 @@
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
     <tr>
-      <td class="cel1 bold"><%= show_label(adjustment) %></td>
+      <td class="cel1 bold"><%= show_label(adjustment) %>:</td>
       <td class="cel2 cell" align="right"><%= adjustment.display_amount.to_html %></td>
     </tr>
   <% end %>

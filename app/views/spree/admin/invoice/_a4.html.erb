@@ -26,6 +26,14 @@
       <div class="totals">
         <%= render "totals_#{params[:template]}" %>
       </div>
+      <div class="states">
+        <%= render "state" %>
+      </div>
+      <div class="spacer"> &nbsp;
+      </div>
+      <div class="refund">
+        <%= render "refund" if @order.reimbursements.last.try(:reimbursement_status) == "reimbursed" %>
+      </div>
     </div>
     <div class="footer">
       <%= render "footer" %>

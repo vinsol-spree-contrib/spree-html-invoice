@@ -1,0 +1,47 @@
+<% @order.reimbursements.each do |reimbursement| %>
+  <fieldset>
+    <legend><%= Spree.t(:items_reimbursed) %></legend>
+    <table>
+      <thead>
+        <tr>
+          <th><%= Spree.t(:product) %></th>
+          <th><%= Spree.t(:pre_tax_amount) %></th>
+          <th><%= Spree.t(:total) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reimbursement.return_items.each do |return_item| %>
+          <tr>
+            <td>
+              <div><%= return_item.inventory_unit.variant.name %></div>
+              <div><%= return_item.inventory_unit.variant.options_text %></div>
+            </td>
+            <td>
+              <%= return_item.display_pre_tax_amount %>
+            </td>
+            <td>
+              <%= return_item.display_total %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p class="bold"><%= Spree.t(:refunds) %>:</p>
+    <table>
+      <thead>
+        <tr>
+          <th><%= Spree.t(:description) %></th>
+          <th><%= Spree.t(:amount) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reimbursement.refunds.each do |refund| %>
+          <tr>
+            <td><%= refund.description %></td>
+            <td><%= refund.display_amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </fieldset>
+<% end %>

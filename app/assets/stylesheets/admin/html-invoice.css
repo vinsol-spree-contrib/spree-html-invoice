@@ -12,7 +12,7 @@ img#logo {
 
 div.header {
   width: 620px;
-  height: 100px;	
+  height: 100px;
 }
 
 div.address {
@@ -36,10 +36,8 @@ div.address {
 
 div.wrapper {
   width: 620px;
-  height: 540px;
   border-top:1px solid grey;
   padding: 6px;
-
 }
 
 div.thanks {
@@ -48,13 +46,20 @@ div.thanks {
   margin-bottom: 20px;
   line-height: 10px;
 }
+
 div.spacer {
   width: 620px;
 }
+
 div.totals {
-  height: 100px;
   margin-bottom: 20px;
   float: right;
+}
+
+div.states {
+  clear: both;
+  width: 620px;
+  line-height: 10px;
 }
 
 .totals .cell {

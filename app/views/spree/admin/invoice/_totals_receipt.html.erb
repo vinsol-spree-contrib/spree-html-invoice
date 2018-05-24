@@ -5,7 +5,7 @@
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
   <tr class="total">
-    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= show_label(adjustment) %></font></td>
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= show_label(adjustment) %>:</font></td>
     <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.display_amount.to_html %></font></td>
   </tr>
   <% end %>
