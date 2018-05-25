@@ -1,6 +1,6 @@
 <h3 class="bold">Payments Information</h3>
 <p><%= Spree.t(:state) %>: <%= @order.payment_state.humanize %></p>
-<% if @order.payment_state == "paid" %>
+<% if @order.paid? %>
   <table cellpadding="7" class="payments heading" >
     <tr>
       <th align="left" class="desc bold heading"><%= Spree.t(:method) %></th>

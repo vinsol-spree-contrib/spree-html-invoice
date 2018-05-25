@@ -22,12 +22,14 @@ module Spree
 
       def show_label(adjustment)
         label =  adjustment.label
+        type = ""
         if adjustment.adjustable.is_a?(Spree::Shipment)
-          label += "(" + Spree.t(:ship_adjustment) + ")"
+          type += Spree.t(:ship_adjustment)
         elsif adjustment.adjustable.is_a?(Spree::LineItem)
-          label += "(" + adjustment.adjustable.product.name + ")"
+          type += adjustment.adjustable.product.name
         end
-        label
+        type = "(#{type})" unless type.empty?
+        label += type
       end
     end
   end

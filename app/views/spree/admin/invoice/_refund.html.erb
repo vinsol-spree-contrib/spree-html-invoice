@@ -1,4 +1,4 @@
-<% @order.reimbursements.each do |reimbursement| %>
+<% @order.reimbursements.reimbursed.each do |reimbursement| %>
   <fieldset>
     <legend><%= Spree.t(:items_reimbursed) %></legend>
     <table cellpadding= "7" class="heading reimbursement">
@@ -26,7 +26,7 @@
     </table>
     <% if reimbursement.refunds.any? %>
       <p class="bold"><%= Spree.t(:refunds) %>:</p>
-      <table cellpadding="7" class="heading reimbursement" >
+      <table cellpadding="7" class="heading reimbursement">
         <thead>
           <tr>
             <th align="left" class="desc bold heading"><%= Spree.t(:description) %></font></th>
