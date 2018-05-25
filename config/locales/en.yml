@@ -8,7 +8,7 @@ en:
     size: "Size"
     price: "Price"
     order_date: "Order date"
-    ship_adjustment: "on Shipping Adjustments from %{location}"
+    ship_adjustment: "Shipping Adjustments"
     shipment_amount: "Shipping Amount"
     state: "State"
     method: "Method"

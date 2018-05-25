@@ -31,9 +31,11 @@
       </div>
       <div class="spacer"> &nbsp;
       </div>
-      <div class="refund">
-        <%= render "refund" if @order.reimbursements.last.try(:reimbursement_status) == "reimbursed" %>
-      </div>
+      <% if @order.reimbursements.reimbursed.any? %>
+        <div class="refund">
+          <%= render "refund" %>
+        </div>
+      <% end %>
     </div>
     <div class="footer">
       <%= render "footer" %>
