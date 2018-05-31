@@ -26,6 +26,18 @@
       <div class="totals">
         <%= render "totals_#{params[:template]}" %>
       </div>
+      <% if params[:template] != "packaging_slip" %>
+        <div class="states">
+          <%= render "state" %>
+        </div>
+        <div class="spacer"> &nbsp;
+        </div>
+        <% if @order.reimbursements.reimbursed.any? %>
+          <div class="refund">
+            <%= render "refund" %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="footer">
       <%= render "footer" %>

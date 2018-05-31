@@ -5,10 +5,14 @@
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
   <tr class="total">
-    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.label %>:</font></td>
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= show_label(adjustment) %>:</font></td>
     <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= adjustment.display_amount.to_html %></font></td>
   </tr>
   <% end %>
+  <tr>
+    <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"> <%= Spree.t(:shipment_amount) %>: </td>
+    <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><%= @order.display_shipment_total.to_html %></font></td>
+  </tr>
   <tr>
     <td class="cel1 bold" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><strong><%= t(:order_total) %>:</strong></font></td>
     <td class="cel2 cell" align="right" style="border-bottom:solid 1px #cccccc;"><font face="Arial, Helvetica, sans-serif" size="2"><strong><span id='summary-order-total'><%= number_to_currency @order.total %></span></strong></font></td>

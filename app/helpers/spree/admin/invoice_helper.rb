@@ -19,6 +19,18 @@ module Spree
           all_addresses << [bill_address.phone, ship_address.phone]
         end
       end
+
+      def show_label(adjustment)
+        label =  adjustment.label
+        type = ""
+        if adjustment.adjustable.is_a?(Spree::Shipment)
+          type += Spree.t(:ship_adjustment)
+        elsif adjustment.adjustable.is_a?(Spree::LineItem)
+          type += adjustment.adjustable.product.name
+        end
+        type = "(#{type})" unless type.empty?
+        label += type
+      end
     end
   end
 end

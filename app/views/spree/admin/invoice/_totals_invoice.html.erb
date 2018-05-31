@@ -5,11 +5,14 @@
   </tr>
   <% @order.all_adjustments.eligible.each do |adjustment| %>
     <tr>
-      <td class="cel1 bold"><%= adjustment.label %>: </td>
+      <td class="cel1 bold"><%= show_label(adjustment) %>:</td>
       <td class="cel2 cell" align="right"><%= adjustment.display_amount.to_html %></td>
     </tr>
   <% end %>
-
+  <tr>
+    <td class="cel1 bold"> <%= Spree.t(:shipment_amount) %>: </td>
+    <td class="cel2 cell" align="right"><%= @order.display_shipment_total.to_html %></td>
+  </tr>
   <tr>
     <td class="cel1 bold"><strong><%= Spree.t(:order_total) %>:</strong></td>
     <td class="cel2 cell" align="right"><strong><span id='summary-order-total'><%= @order.display_total.to_html %></span></strong></td>

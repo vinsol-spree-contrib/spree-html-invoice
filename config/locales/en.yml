@@ -2,14 +2,17 @@
 
 en:
   spree:
-    footer_left: "Return any time any reason<br/>"
-    footer_left2: " 14 days <br/> or never"
-
     footer_right: "Company  <br/>Phone  <br/> www "
     footer_right2: " My great company <br/>040 146 1222 <br/>  www.gohereoften.com"
 
     size: "Size"
     price: "Price"
+    order_date: "Order date"
+    ship_adjustment: "Shipping Adjustments"
+    shipment_amount: "Shipping Amount"
+    state: "State"
+    method: "Method"
+    amount: "Amount"
     invoice:
       header: Customer Invoice
       thanks: Thank you for your order.

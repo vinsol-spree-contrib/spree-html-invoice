@@ -1,0 +1,47 @@
+<% @order.reimbursements.reimbursed.each do |reimbursement| %>
+  <fieldset>
+    <legend><%= Spree.t(:items_reimbursed) %></legend>
+    <table cellpadding= "7" class="heading reimbursement">
+      <thead>
+        <tr>
+          <th align="left" class="desc bold heading"><%= Spree.t(:product) %></th>
+          <th align="left" class="desc bold heading"><%= Spree.t(:exchange_for) %></th>
+          <th align="left" class="desc bold heading"><%= Spree.t(:pre_tax_amount) %></th>
+          <th align="left" class="desc bold heading"><%= Spree.t(:total) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reimbursement.return_items.each do |return_item| %>
+          <tr>
+            <td class="cell content" >
+              <div><%= return_item.inventory_unit.variant.name %></div>
+              <div><%= return_item.inventory_unit.variant.options_text %></div>
+            </td>
+            <td class="cell content"><%= return_item.exchange_variant.try(:exchange_name) %></td>
+            <td class="cell content"><%= return_item.display_pre_tax_amount %></td>
+            <td class="cell content"><%= return_item.display_total %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% if reimbursement.refunds.any? %>
+      <p class="bold"><%= Spree.t(:refunds) %>:</p>
+      <table cellpadding="7" class="heading reimbursement">
+        <thead>
+          <tr>
+            <th align="left" class="desc bold heading"><%= Spree.t(:description) %></font></th>
+            <th align="left" class="desc bold heading"><%= Spree.t(:amount) %></font></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% reimbursement.refunds.each do |refund| %>
+            <tr>
+              <td class="cell content"><%= refund.description %></td>
+              <td class="cell content"><%= refund.display_amount %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </fieldset>
+<% end %>

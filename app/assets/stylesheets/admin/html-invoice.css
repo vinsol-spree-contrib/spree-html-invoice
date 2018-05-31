@@ -12,7 +12,7 @@ img#logo {
 
 div.header {
   width: 620px;
-  height: 100px;	
+  height: 100px;
 }
 
 div.address {
@@ -22,7 +22,7 @@ div.address {
   padding: 6px;
 
 }
-.line_items {
+.line_items, .payments, .reimbursement {
   width: 620px;
 }
 
@@ -36,10 +36,8 @@ div.address {
 
 div.wrapper {
   width: 620px;
-  height: 540px;
   border-top:1px solid grey;
   padding: 6px;
-
 }
 
 div.thanks {
@@ -48,13 +46,20 @@ div.thanks {
   margin-bottom: 20px;
   line-height: 10px;
 }
+
 div.spacer {
   width: 620px;
 }
+
 div.totals {
-  height: 100px;
   margin-bottom: 20px;
   float: right;
+}
+
+div.states {
+  clear: both;
+  width: 620px;
+  line-height: 10px;
 }
 
 .totals .cell {
@@ -127,6 +132,23 @@ table.footer td{
   padding-bottom: 3px;
 }
 
+table.heading {
+  border-spacing: 0px;
+  border: solid 1px #cccccc;
+  border-bottom: none;
+  margin: 20px 0;
+}
+
+th.heading {
+  background-color: #cccccc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+td.content {
+  border-bottom: 1px solid #cccccc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
 
 div.cod {
   float: left;

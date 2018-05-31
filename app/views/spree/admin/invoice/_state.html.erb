@@ -1,0 +1,16 @@
+<h3 class="bold">Payments Information</h3>
+<p><%= Spree.t(:state) %>: <%= @order.payment_state.humanize %></p>
+<% if @order.paid? %>
+  <table cellpadding="7" class="payments heading" >
+    <tr>
+      <th align="left" class="desc bold heading"><%= Spree.t(:method) %></th>
+      <th align="left" class="desc bold heading"><%= Spree.t(:amount) %></th>
+    </tr>
+    <% @order.payments.completed.each do |payment| %>
+      <tr >
+        <td class="cell content"><%= payment.payment_method.name %></td>
+        <td class="cell content"><%= payment.display_amount %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
