@@ -12,7 +12,7 @@ module SpreeHtmlInvoice
       app.config.assets.precompile += [ "admin/html-invoice.css", "admin/html-receipt.css" ]
     end
 
-    initializer "spree.spree_html_invoice.preferences", before: :load_config_initializers, :after => "spree.environment" do |app|
+    initializer "spree.spree_html_invoice.preferences", before: :load_config_initializers, after: "spree.environment" do |app|
       Spree::HtmlInvoice::Config = Spree::HtmlInvoiceConfiguration.new
     end
 
