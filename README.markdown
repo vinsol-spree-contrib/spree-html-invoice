@@ -3,6 +3,10 @@ Spree-Html-Invoice
 
 This extension provides a "Print Invoice" button on the Admin Orders view screen which opens a printable html page with the order details.
 
+Try Spree Html Invoice for Spree 3-1 with direct deployment on Heroku:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/spree-html-invoice-3-1)
+
 Installation
 ------------
 
