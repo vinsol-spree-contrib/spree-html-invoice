@@ -2,9 +2,11 @@
    buttons = buttons.split(",").collect{|b| b.strip } %>
 <%  buttons.each do |button| %>
   <li>
-    <%= link_to("/admin/invoice/#{@order.number}/#{button}", target:  "_blank") do %>
-      <span class='glyphicon glyphicon-print'></span>
-      <%= Spree.t(button.to_s + ".print") %>
-    <% end %>
+    <%= link_to_with_icon 'report.svg',
+      Spree.t(button.to_s + ".print"),
+      "/admin/invoice/#{@order.number}/#{button}",
+      target: "_blank",
+      class: "nav-link"
+    %>
   </li>
 <%end%>
