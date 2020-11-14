@@ -5,7 +5,7 @@
 <title><%= Spree.t("#{params[:template]}.header") %></title>
 </head>
 
-<body onLoad="self.print()">
+<body onload="window.print()">
   <div class="receipt">
     <div id="header">
       <%= render "spree/admin/invoice/receipt_header" %>

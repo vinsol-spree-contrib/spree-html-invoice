@@ -9,11 +9,13 @@ module SpreeHtmlInvoice
     config.autoload_paths += %W(#{config.root}/lib)
 
     initializer "spree_html_invoice.assets.precompile", :after => "spree.assets.precompile" do |app|
-      app.config.assets.precompile += [ "admin/html-invoice.css", "admin/html-receipt.css" ]
+      app.config.assets.precompile += [ "admin/html-invoice.css", "admin/html-receipt.css", Spree::HtmlInvoice::Config[:html_invoice_logo_path] ]
     end
 
     initializer "spree.spree_html_invoice.preferences", before: :load_config_initializers, :after => "spree.environment" do |app|
       Spree::HtmlInvoice::Config = Spree::HtmlInvoiceConfiguration.new
+      Spree::HtmlInvoice::Config[:html_invoice_logo_path] = Spree::Config[:logo]
+      Spree::HtmlInvoice::Config.set(print_buttons: "invoice,packaging_slip")
     end
 
     def self.activate
